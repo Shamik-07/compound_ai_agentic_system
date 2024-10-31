@@ -22,3 +22,16 @@ dev-dependencies = [
     "ipython>=8.29.0",
     "pytest>=8.3.3",
 ]
+
+[tool.ruff.lint]
+select = [
+    "C", "E", "F", "I", "B", "Q", "W", "UP", "W291", "I001", "F401" 
+]
+fixable = ["ALL"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = 50
