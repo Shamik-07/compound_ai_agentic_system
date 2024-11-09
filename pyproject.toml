@@ -13,9 +13,6 @@ dependencies = [
     "duckduckgo-search>=6.3.3",
     "google-generativeai>=0.8.3",
     "googlesearch-python>=1.2.5",
-    "langchain-core>=0.3.14",
-    "langchain-openai>=0.2.4",
-    "langsmith>=0.1.138",
     "lxml-html-clean>=0.3.1",
     "newspaper4k>=0.9.3.1",
     "openai>=1.52.2",
@@ -31,11 +28,14 @@ dev-dependencies = [
     "jupyter>=1.1.1",
     "pip>=24.3.1",
     "pytest>=8.3.3",
+    "langchain-core>=0.3.14",
+    "langchain-openai>=0.2.4",
+    "langsmith>=0.1.138",
 ]
 
 [tool.ruff.lint]
 select = [
-    "C", "E", "F", "I", "B", "Q", "W", "UP", "W291", "I001", "F401" 
+    "C", "E", "F", "I", "B", "Q", "W", "UP", "W291", "I001", "F401"
 ]
 fixable = ["ALL"]
 

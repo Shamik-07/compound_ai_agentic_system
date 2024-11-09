@@ -255,9 +255,6 @@ dependencies = [
     { name = "duckduckgo-search" },
     { name = "google-generativeai" },
     { name = "googlesearch-python" },
-    { name = "langchain-core" },
-    { name = "langchain-openai" },
-    { name = "langsmith" },
     { name = "lxml-html-clean" },
     { name = "newspaper4k" },
     { name = "openai" },
@@ -270,6 +267,9 @@ dependencies = [
 dev = [
     { name = "ipython" },
     { name = "jupyter" },
+    { name = "langchain-core" },
+    { name = "langchain-openai" },
+    { name = "langsmith" },
     { name = "pip" },
     { name = "pytest" },
 ]
@@ -281,21 +281,21 @@ requires-dist = [
     { name = "duckduckgo-search", specifier = ">=6.3.3" },
     { name = "google-generativeai", specifier = ">=0.8.3" },
     { name = "googlesearch-python", specifier = ">=1.2.5" },
-    { name = "langchain-core", specifier = ">=0.3.14" },
-    { name = "langchain-openai", specifier = ">=0.2.4" },
-    { name = "langsmith", specifier = ">=0.1.138" },
     { name = "lxml-html-clean", specifier = ">=0.3.1" },
     { name = "newspaper4k", specifier = ">=0.9.3.1" },
     { name = "openai", specifier = ">=1.52.2" },
     { name = "phidata", specifier = ">=2.5.30" },
     { name = "pycountry", specifier = ">=24.6.1" },
-    { name = "yfinance" },
+    { name = "yfinance", specifier = ">=0.2.48" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "ipython", specifier = ">=8.29.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "langchain-core", specifier = ">=0.3.14" },
+    { name = "langchain-openai", specifier = ">=0.2.4" },
+    { name = "langsmith", specifier = ">=0.1.138" },
     { name = "pip", specifier = ">=24.3.1" },
     { name = "pytest", specifier = ">=8.3.3" },
 ]
