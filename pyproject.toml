@@ -32,6 +32,7 @@ dev-dependencies = [
     "langchain-openai>=0.2.4",
     "langsmith>=0.1.138",
     "ruff>=0.7.3",
+    "ipython-sql>=0.5.0",
 ]
 
 [tool.ruff.lint]
