@@ -149,6 +149,7 @@ dependencies = [
     { name = "phidata" },
     { name = "pycountry" },
     { name = "sqlalchemy" },
+    { name = "wikipedia" },
     { name = "yfinance" },
 ]
 
@@ -176,6 +177,7 @@ requires-dist = [
     { name = "phidata", specifier = ">=2.5.30" },
     { name = "pycountry", specifier = ">=24.6.1" },
     { name = "sqlalchemy", specifier = ">=2.0.36" },
+    { name = "wikipedia", specifier = ">=1.4.0" },
     { name = "yfinance", specifier = ">=0.2.48" },
 ]
 
@@ -2824,6 +2826,16 @@ sdist = { url = "https://files.pythonhosted.org/packages/56/fc/238c424fd7f4ebb25
 wheels = [
     { url = "https://files.pythonhosted.org/packages/21/02/88b65cc394961a60c43c70517066b6b679738caf78506a5da7b88ffcb643/widgetsnbextension-4.0.13-py3-none-any.whl", hash = "sha256:74b2692e8500525cc38c2b877236ba51d34541e6385eeed5aec15a70f88a6c71", size = 2335872 },
 ]
+
+[[package]]
+name = "wikipedia"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/67/35/25e68fbc99e672127cc6fbb14b8ec1ba3dfef035bf1e4c90f78f24a80b7d/wikipedia-1.4.0.tar.gz", hash = "sha256:db0fad1829fdd441b1852306e9856398204dc0786d2996dd2e0c8bb8e26133b2", size = 27748 }
 
 [[package]]
 name = "yfinance"
