@@ -3,19 +3,21 @@ from pathlib import Path
 from textwrap import dedent
 
 from dotenv import load_dotenv
-
 from phi.agent import Agent
 from phi.model.openai import OpenAIChat
 from phi.storage.agent.sqlite import SqlAgentStorage
 from phi.tools.file import FileTools
-
 from phi.tools.googlesearch import GoogleSearch
 from phi.tools.hackernews import HackerNews
 from phi.tools.newspaper4k import Newspaper4k
 from phi.tools.yfinance import YFinanceTools
 
-import wikipedia
-from utils import moderate_content, create_finance_reports_dir, search_on_wikipedia, delete_exisiting_chat_history
+from utils import (
+    create_finance_reports_dir,
+    delete_exisiting_chat_history,
+    moderate_content,
+    search_on_wikipedia,
+)
 
 _ = load_dotenv()
 
