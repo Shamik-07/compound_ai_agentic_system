@@ -1,0 +1,46 @@
+from dotenv import load_dotenv
+from phi.model.message import Message
+import gradio as gr
+import time
+from agents import planning_agent
+from openai import OpenAI
+
+
+_ = load_dotenv()
+openai_client = OpenAI()
+
+
+def predict(message, history):
+    history_format = []
+    for msg in history:
+        if msg["role"] == "user":
+            history_format.append(Message(role="user", content=msg["content"]))
+        elif msg["role"] == "assistant":
+            history_format.append(Message(role="assistant", content=msg["content"]))
+    history_format.append(Message(role="user", content=message))
+    gpt_response = planning_agent.run(messages=history_format)
+    # return gpt_response.content
+    for i in range(len(gpt_response.content)):
+        time.sleep(0.01)
+        yield gpt_response.content[: i + 1]
+
+TITLE = """
+An Agent with versatile capabilities...
+"""
+DESCRIPTION = """
+This is application allows you to **search for top news, search for tech specific news
+from hackernews, teach you C, C++, Rust, and Python, research a particular equity and
+give you a guidance to a personal finance, search for a Wikipedia article.**
+If you aren't still satisfied with these capabilities,
+then you can use the **ASK ME ANYTHING(AMA)** feature.
+
+Note: After the first input, there will be a `trash icon` on the top right hand corner of the chatbox,
+to clear the entire chat, and below each agent response there's an `Undo` and 
+`Retry` icon.
+"""
+
+if __name__=="__main__":
+    gr.ChatInterface(predict, title=TITLE, description=DESCRIPTION,type="messages",
+                 textbox=gr.Textbox(placeholder="Type in a message and press enter...",
+                                   submit_btn=True, stop_btn=True, label="textbox")
+                ).launch()
