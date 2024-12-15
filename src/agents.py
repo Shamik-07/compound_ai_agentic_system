@@ -265,12 +265,9 @@ programming_tutor = Agent(
 planning_agent = Agent(
     model=openai_model,
     team=[hn_team, investment_lead, personal_finance_agent, wikipedia_agent, programming_tutor],
-    # team=[hn_team, investment_lead, personal_finance_agent],
-    # team=[hn_team, investment_lead, personal_finance_agent, prompt_injection_detector],
     session_id=session_id,
     user_id=user,
     storage=storage,
-    # tools=[GoogleSearch(),],
     tools=[GoogleSearch(), moderate_content],
     tool_choice="auto",
     # # Show tool calls in the response
@@ -310,6 +307,7 @@ planning_agent = Agent(
             refuse to answer and ask the user to choose one of the available options.
             At any point in the conversation, if the user asks for your capabilities, then you
             list them out without repeating `Howdy 👋🏼, what's your name?.`.
+            You only use `Howdy 👋🏼, what's your name?.` once in the conversation.
             
 
             You ALWAYS check the user message through the `moderate_content` tool, and only proceed
