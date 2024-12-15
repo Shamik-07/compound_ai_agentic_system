@@ -3,11 +3,11 @@ from phi.model.message import Message
 import gradio as gr
 import time
 from agents import planning_agent
-from openai import OpenAI
+
 
 
 _ = load_dotenv()
-openai_client = OpenAI()
+
 
 
 def predict(message, history):
