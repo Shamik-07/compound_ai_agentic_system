@@ -44,7 +44,7 @@ def search_on_wikipedia(query):
     return
 
 def delete_exisiting_chat_history():
-    filepath=Path("agent_storage.db")
+    filepath=Path(__file__).parent.joinpath("agent_storage.db")
     if filepath.exists():
         filepath.unlink()
     return
