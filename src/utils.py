@@ -1,6 +1,11 @@
 import json
 from pathlib import Path
 from shutil import rmtree
+from openai import OpenAI
+from dotenv import load_dotenv
+
+_ = load_dotenv()
+openai_client = OpenAI()
 
 def moderate_content(text):
     """Use this function to moderate messages.
@@ -16,12 +21,11 @@ def moderate_content(text):
 
 
 def create_finance_reports_dir():
-    # reports_dir = Path(__file__).joinpath("junk", "reports")
-    reports_dir = Path.cwd().joinpath("finance_agent", "reports")
+    reports_dir = Path(__file__).parent.joinpath("finance_agent", "reports")
     if reports_dir.exists():
         rmtree(path=reports_dir, ignore_errors=True)
     reports_dir.mkdir(parents=True, exist_ok=True)
-    return
+    return reports_dir
 
 def search_on_wikipedia(query):
     try:
