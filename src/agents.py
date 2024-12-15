@@ -25,7 +25,7 @@ openai_model = OpenAIChat(
 
 reports_dir = create_finance_reports_dir()
 _ = delete_exisiting_chat_history()
-storage = SqlAgentStorage(table_name="agent_memory", db_file="agent_storage.db")
+storage = SqlAgentStorage(table_name="agent_memory", db_file=Path(__file__).parent.joinpath("agent_storage.db"))
 session_id = None
 user = "user"
 
