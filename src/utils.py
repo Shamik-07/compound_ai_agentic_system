@@ -1,8 +1,10 @@
 import json
 from pathlib import Path
 from shutil import rmtree
-from openai import OpenAI
+
+import wikipedia
 from dotenv import load_dotenv
+from openai import OpenAI
 
 _ = load_dotenv()
 openai_client = OpenAI()
