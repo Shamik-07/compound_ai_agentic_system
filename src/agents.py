@@ -29,34 +29,59 @@ reports_dir = create_finance_reports_dir()
 _ = delete_exisiting_chat_history()
 storage = SqlAgentStorage(
     table_name="agent_memory",
-    db_file=Path(__file__).parent.joinpath("agent_storage.db"),
+    db_file=Path(__file__).parent.joinpath("agent_storage.db").as_posix(),
 )
 session_id = None
 user = "user"
 
 
 hn_researcher = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=True,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
     name="HackerNews Researcher",
     role="Gets top stories from hackernews.",
     tools=[HackerNews()],
-    model=openai_model,
+    provider=openai_model,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
+    add_chat_history_to_messages=False,
+
 )
 
 
 article_reader = Agent(
     name="Article Reader",
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    add_chat_history_to_messages=False,
     role="Reads articles from URLs.",
     tools=[Newspaper4k()],
-    model=openai_model,
+    provider=openai_model,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
 )
 
 top_news_search_agent = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=True,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    add_chat_history_to_messages=False,
     name="top news search",
     role="Searches the web for information on a topic",
     description="You are a news agent that helps users find the latest news.",
@@ -73,13 +98,21 @@ top_news_search_agent = Agent(
     ],
     tools=[GoogleSearch()],
     add_datetime_to_instructions=True,
-    model=openai_model,
+    provider=openai_model,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
 )
 
 hn_team = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=True,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    add_chat_history_to_messages=False,
     name="Hackernews Team",
     team=[hn_researcher, top_news_search_agent, article_reader],  #   web_searcher
     instructions=[
@@ -95,15 +128,23 @@ hn_team = Agent(
     ],
     # show_tool_calls=True,
     markdown=True,
-    model=openai_model,
+    provider=openai_model,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
 )
 
 stock_analyst = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    add_chat_history_to_messages=False,
     name="Stock Analyst",
-    model=openai_model,
+    provider=openai_model,
     role="Get current stock price, analyst recommendations and news for a company.",
     tools=[
         YFinanceTools(enable_all=True),
@@ -119,12 +160,19 @@ stock_analyst = Agent(
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
-    # debug_mode=True,
 )
 
 research_analyst = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    add_chat_history_to_messages=False,
     name="Research Analyst",
-    model=openai_model,
+    provider=openai_model,
     role="Writes research reports on stocks.",
     tools=[FileTools(base_dir=reports_dir)],
     description="You are an investment researcher analyst tasked with producing a ranked list of companies based on their investment potential.",
@@ -143,10 +191,17 @@ research_analyst = Agent(
 )
 
 investment_lead = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    add_chat_history_to_messages=False,
     name="Investment Lead",
-    model=openai_model,
+    provider=openai_model,
     team=[stock_analyst, research_analyst],
-    # show_tool_calls=True,
     tools=[FileTools(base_dir=reports_dir)],
     description="You are an investment lead tasked with producing a research report on companies for investment purposes.",
     instructions=[
@@ -162,30 +217,41 @@ investment_lead = Agent(
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
-    # debug_mode=True,
 )
 
 personal_finance_agent = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
     name="Personal Finance Agent",
-    model=openai_model,
+    provider=openai_model,
     tools=[YFinanceTools(enable_all=True)],
     description="You are an expert financial planner and you provide customised plan based on the investors inputs.",
     instructions=[
         "Use tables to display data.",
         "Don't include intermediary steps in the output.",
     ],
-    # show_tool_calls=True,
     markdown=True,
     add_chat_history_to_messages=True,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
-    # debug_mode=True
 )
 
 wikipedia_agent = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=True,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
     name="Wikipedia Agent",
-    model=openai_model,
+    provider=openai_model,
     tools=[search_on_wikipedia],
     tool_choice="auto",
     description="You are an Wikipedia search agent.",
@@ -210,19 +276,24 @@ wikipedia_agent = Agent(
         """
         )
     ],
-    # show_tool_calls=True,
     markdown=True,
     add_chat_history_to_messages=True,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     num_history_responses=10,
     read_chat_history=True,
-    # debug_mode=True
 )
 
 programming_tutor = Agent(
+    agent_id=None,
+    session_id=session_id,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
     name="Programming Tutor",
-    model=openai_model,
+    provider=openai_model,
     description="You are an expert programming teacher of `C, C++, Rust, Python` and love to teach.",
     instructions=[
         dedent(
@@ -258,19 +329,23 @@ programming_tutor = Agent(
         """
         )
     ],
-    # show_tool_calls=True,
     markdown=True,
     add_chat_history_to_messages=True,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
     num_history_responses=10,
-    # debug_mode=True
 )
 
 
 planning_agent = Agent(
-    model=openai_model,
+    agent_id=None,
+    knowledge_base=None,
+    add_references=False,
+    references_format="json",
+    output_model=None,
+    debug_mode=False,
+    provider=openai_model,
     team=[
         hn_team,
         investment_lead,
@@ -283,15 +358,8 @@ planning_agent = Agent(
     storage=storage,
     tools=[GoogleSearch(), moderate_content],
     tool_choice="auto",
-    # # Show tool calls in the response
-    # show_tool_calls=True,
-    # Enable the agent to read the chat history
     read_chat_history=True,
-    # We can also automatically add the chat history to the messages sent to the model
-    # But giving the model the chat history is not always useful, so we give it a tool instead
-    # to only use when needed.
-    add_history_to_messages=True,
-    # Number of historical responses to add to the messages.
+    add_chat_history_to_messages=True,
     num_history_responses=7,
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
@@ -324,10 +392,10 @@ planning_agent = Agent(
             
 
             You ALWAYS check the user message through the `moderate_content` tool, and only proceed
-            if the result is False. Every user input and model response shown to the 
+            if the result is False. Every user input and provider response shown to the 
             user needs to be checked with `moderate_content` tool. 
             The `moderate_content` tool takes in `text` as an argument. The user message
-            and model response are both considered as `text`.
+            and provider response are both considered as `text`.
             Every user input you pass it to the `moderate_content` tool as a `text` as an argument.
             Every response to the user, you pass it to the `moderate_content` tool as a `text` as an argument.
             If the `moderate_content` tool returns True, then you end the chat by
@@ -373,5 +441,4 @@ planning_agent = Agent(
     """
     ),
     role="Orchestrator of tasks.",
-    # debug_mode=True
 )
