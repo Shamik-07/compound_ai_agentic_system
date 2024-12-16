@@ -27,7 +27,10 @@ openai_model = OpenAIChat(
 
 reports_dir = create_finance_reports_dir()
 _ = delete_exisiting_chat_history()
-storage = SqlAgentStorage(table_name="agent_memory", db_file=Path(__file__).parent.joinpath("agent_storage.db"))
+storage = SqlAgentStorage(
+    table_name="agent_memory",
+    db_file=Path(__file__).parent.joinpath("agent_storage.db"),
+)
 session_id = None
 user = "user"
 
@@ -186,8 +189,9 @@ wikipedia_agent = Agent(
     tools=[search_on_wikipedia],
     tool_choice="auto",
     description="You are an Wikipedia search agent.",
-    instructions=[dedent(
-        """\
+    instructions=[
+        dedent(
+            """\
         You follow all the instructions below precisely and never deviate from them:
 
         You pass the user message to the `search_on_wikipedia` tool that you have access to
@@ -204,7 +208,8 @@ wikipedia_agent = Agent(
         **You execute the `search_on_wikipedia` tool only once.**
         YOU ALWAYS RETURN ONLY THE OUTPUT FROM THE `SEARCH_ON_WIKIPEDIA` TOOL VERBATIM.
         """
-    )],
+        )
+    ],
     # show_tool_calls=True,
     markdown=True,
     add_chat_history_to_messages=True,
@@ -266,7 +271,13 @@ programming_tutor = Agent(
 
 planning_agent = Agent(
     model=openai_model,
-    team=[hn_team, investment_lead, personal_finance_agent, wikipedia_agent, programming_tutor],
+    team=[
+        hn_team,
+        investment_lead,
+        personal_finance_agent,
+        wikipedia_agent,
+        programming_tutor,
+    ],
     session_id=session_id,
     user_id=user,
     storage=storage,
