@@ -18,12 +18,12 @@ companies in USA.
 6. C, C++, Rust, Python Programming tutor.
 7. Ask me anything(AMA).
 
-A more detailed description is [here](Brief-description-on-the-features).
+A more detailed description is [here](#features-description).
 ## Usage
 
 ...
 
-## Brief description on the features
+## Brief description on the features {#features-description}
 
 ### Search top 5 news from hackernews and return a summary of the articles
 
