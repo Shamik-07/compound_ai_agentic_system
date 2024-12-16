@@ -29,10 +29,11 @@ It also has the ability to detect `prompt leakage/attack` and refuses to divulge
 
 ## Usage
 
-1. Navigate to `berkley_hack` dir
-2. Install [UV](https://docs.astral.sh/uv/getting-started/installation/), if unavailable and execute `uv run src/app.py`
-3. Navigate to `http://127.0.0.1:7860`
-4. Happy Chatting! 😉
+1. Navigate to `berkley_hack` dir, this will be default name of the dir, if you clone this repo
+2. Install [UV](https://docs.astral.sh/uv/getting-started/installation/), if unavailable
+3. Execute `uv run src/app.py`
+4. Navigate to `http://127.0.0.1:7860`
+5. Happy Chatting! 😉
 
 ## Brief description of the system features
 
@@ -68,4 +69,7 @@ As the name suggests, this feature helps anyone interested in learning a program
 
 This is self-explanatory, and it aims to answer any question that the user might have, all under the ambit of the internet of course 😉.
 
-# Project Details
+# Resources
+
+- [Video Presentation]()
+- [Slides]()
