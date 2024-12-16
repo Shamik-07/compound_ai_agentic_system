@@ -1,11 +1,11 @@
-# Compound AI System Solution using LLMs
+# 🖥️ Compound AI System Solution using LLMs 🖥️
 
 ## Introduction
 
 As part of the [Berkley LLM Agent Hackathon 2024](https://rdi.berkeley.edu/llm-agents-hackathon/), this multi-agent solution was developed to solve real world problems such as: `financial inclusion` and `financial information asymmetry`, `lack of computer science/programming teachers or overburdended teachers` especially in developing countries such as *India*, help with `wikipedia research`, stay `abreast with contemporary news` and a personal `Question Answering` system.
 This showcases the potential of making education accessible, and aid vital information dissemination.
 
-In essence, this compound AI system showcases the benefits of creating such a system, by orchestrating several agents to solve complex tasks and accessing it all from a single screen, all while having a conversation with it.
+In essence, this *compound AI system* showcases the benefits of creating such a system, by orchestrating several agents to solve complex tasks and accessing it all from a single screen, and all while having a conversation with it.
 
 ## System Features
 
@@ -29,7 +29,10 @@ It also has the ability to detect `prompt leakage/attack` and refuses to divulge
 
 ## Usage
 
-...
+1. Navigate to `berkley_hack` dir
+2. Install [UV](https://docs.astral.sh/uv/getting-started/installation/), if unavailable and execute `uv run src/app.py`
+3. Navigate to `http://127.0.0.1:7860`
+4. Happy Chatting! 😉
 
 ## Brief description of the system features
 
@@ -45,7 +48,7 @@ This is used for searching top news, in English, across the internet and returns
 
 This acts as a financial planner and tries to guide each individual to have a financial plan in place for a better financial security and future. It can answer many personal finance questions and give recommendations based on the information you provide.
 
-**Disclaimer:**
+<span style="color:red;">**Disclaimer:**</span>
 All personal finance recommendations from the system are solely for demonstration purposes only. It's solely up to the user's discretion, whether to use the recommendations provided to him/her.
 
 ### Equity Researcher
