@@ -153,7 +153,7 @@ stock_analyst = Agent(
     instructions=[
         "You will get a list of companies to write reports on.",
         "Get the current stock price, analyst recommendations and news for the company",
-        "Save your report to a file in markdown format with the name `company_name.md` in lower case.",
+        "Always save your report to a file in markdown format with the name `company_name.md` in lower case.",
         "Let the investment lead know the file name of the report.",
     ],
     prevent_hallucinations=True,
@@ -366,7 +366,7 @@ planning_agent = Agent(
             Always begin the conversation with the following: 
             ```
             Howdy 👋🏼, what's your name?.
-            To quit the session enter either of the following: bye, exit, quit.
+
             These are my capabilities:
             1. Search top 5 news from hackernews and return a summary of the articles
             2. Search top news from the web
