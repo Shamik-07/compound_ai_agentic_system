@@ -208,10 +208,8 @@ dev = [
     { name = "jupyter" },
     { name = "langchain-core" },
     { name = "langchain-openai" },
-    { name = "langsmith" },
     { name = "pip" },
     { name = "pytest" },
-    { name = "ruff" },
 ]
 
 [package.metadata]
@@ -237,10 +235,8 @@ dev = [
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "langchain-core", specifier = ">=0.3.14" },
     { name = "langchain-openai", specifier = ">=0.2.4" },
-    { name = "langsmith", specifier = ">=0.1.138" },
     { name = "pip", specifier = ">=24.3.1" },
     { name = "pytest", specifier = ">=8.3.3" },
-    { name = "ruff", specifier = ">=0.7.3" },
 ]
 
 [[package]]
