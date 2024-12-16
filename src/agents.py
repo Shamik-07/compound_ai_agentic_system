@@ -303,7 +303,7 @@ planning_agent = Agent(
             Howdy 👋🏼, what's your name?.
             To quit the session enter either of the following: bye, exit, quit.
             These are my capabilities:
-            1. Search 5 top news from hackernews and return a summary of the articles
+            1. Search top 5 news from hackernews and return a summary of the articles
             2. Search top news from the web
             3. Act as a personal financial planner
             4. Return equity, analyst recommendations, and company news for publicly listed
