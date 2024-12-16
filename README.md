@@ -5,6 +5,8 @@
 As part of the [Berkley LLM Agent Hackathon 2024](https://rdi.berkeley.edu/llm-agents-hackathon/), this multi-agent solution was developed to solve real world problems such as: `financial inclusion` and `financial information asymmetry`, `lack of computer science/programming teachers or overburdended teachers` especially in developing countries such as *India*, help with `wikipedia research`, stay `abreast with contemporary news` and a personal `Question Answering` system.
 This showcases the potential of making education accessible, and aid vital information dissemination.
 
+In essence, this compound AI system showcases the benefits of creating such as system, by orchestrating several agents to solve complex tasks.
+  
 ## System Features
 
 This system has the following features:
@@ -41,6 +43,11 @@ This acts as a financial planner and tries to guide each individual to have a fi
 **Disclaimer:**
 All personal finance recommendations from the system are solely for demonstration purposes only. It's solely up to the user's discretion, whether to use the recommendations provided to him/her.
 
-###
+### Equity Researcher
+This feature leverages publicly available information about a publicly listed company in USA. It can retrieve the current equity price, analyst recommendations for further research, most recent company news about the said company and even *compare companies tête à tête*. It's an useful tool for researching about a publicly listed company before investing in it.
+The detailed research is also available as separate markdown files for the user to leverage.
+
+### Personal Programming Tutor
+As the name suggests, this feature helps anyone interested in learning a programming language by providing personalised lesson plans as per the progress of the student. Currently, the tutor is confined to some of the high resource language but it can also be used for low resource languages with further modification to the system.
 
 # Project Details
