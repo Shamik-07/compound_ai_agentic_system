@@ -176,7 +176,6 @@ research_analyst = Agent(
     tools=[FileTools(base_dir=reports_dir)],
     description="You are an investment researcher analyst tasked with producing a ranked list of companies based on their investment potential.",
     instructions=[
-        # "You will write your research report based on the information available in files.",
         "You will write your research report based on the information available in files produced by the stock analyst.",
         "The investment lead will provide you with the files saved by the stock analyst."
         "If no files are provided, list all files in the entire folder and read the files with names matching company names.",
@@ -186,7 +185,6 @@ research_analyst = Agent(
     prevent_hallucinations=True,
     prevent_prompt_leakage=True,
     read_chat_history=True,
-    # debug_mode=True,
 )
 
 investment_lead = Agent(
