@@ -30,10 +30,11 @@ It also has the ability to detect `prompt leakage/attack` and refuses to divulge
 ## Usage
 
 1. Navigate to `berkley_hack` dir, this will be default name of the dir, if you clone this repo
-2. Install [UV](https://docs.astral.sh/uv/getting-started/installation/), if unavailable
-3. Execute `uv run src/app.py`
-4. Navigate to `http://127.0.0.1:7860`
-5. Happy Chatting! 😉
+2. Create a `.env` file and input your `OPENAI_API_KEY=`
+3. Install [UV](https://docs.astral.sh/uv/getting-started/installation/), if unavailable
+4. Execute `uv run src/app.py`
+5. Navigate to `http://127.0.0.1:7860`
+6. Happy Chatting! 😉
 
 ## Brief description of the system features
 
@@ -72,4 +73,4 @@ This is self-explanatory, and it aims to answer any question that the user might
 # Resources
 
 - [Video Presentation]()
-- [Slides]()
+- [Slides](https://docs.google.com/presentation/d/1jrONLX6S9hsc4My43XxR44jb0WzpISy5SM5OwJcB4y0/edit?usp=sharing)
