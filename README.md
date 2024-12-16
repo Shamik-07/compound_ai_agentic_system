@@ -18,12 +18,13 @@ companies in USA.
 6. C, C++, Rust, Python Programming tutor.
 7. Ask me anything(AMA).
 
-A more detailed description is [here](#features-description).
+A more detailed description is [here](#brief-description-of-the-system-features).
+
 ## Usage
 
 ...
 
-## Brief description on the features {#features-description}
+## Brief description of the system features
 
 ### Search top 5 news from hackernews and return a summary of the articles
 
@@ -39,5 +40,7 @@ This acts as a financial planner and tries to guide each individual to have a fi
 
 **Disclaimer:**
 All personal finance recommendations from the system are solely for demonstration purposes only. It's solely up to the user's discretion, whether to use the recommendations provided to him/her.
-### 
+
+###
+
 # Project Details
