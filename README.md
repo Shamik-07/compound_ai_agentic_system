@@ -22,6 +22,11 @@ companies in USA.
 
 A more detailed description is [here](#brief-description-of-the-system-features).
 
+### Safety Features
+
+The system has a `content moderation` in place, which checks for harmful content being sent to it and asked to generate and **REFUSES** to answer the query.
+It also has the ability to detect `prompt leakage/attack` and refuses to divulge any compromising information such as the *API KEY, System Prompt,...* .
+
 ## Usage
 
 ...
@@ -58,6 +63,6 @@ As the name suggests, this feature helps anyone interested in learning a program
 
 ### Ask me anything(AMA)
 
-This is self-explanatory, and it aims to answer questions
+This is self-explanatory, and it aims to answer any question that the user might have, all under the ambit of the internet of course 😉.
 
 # Project Details
