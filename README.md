@@ -28,6 +28,7 @@ The system has a `content moderation` in place, which checks for harmful content
 It also has the ability to detect `prompt leakage/attack` and refuses to divulge any compromising information such as the *API KEY, System Prompt,...* .
 
 ## Usage
+<span style="color:red;">**Follow the instructions precisely.**</span>
 
 1. Navigate to `berkley_hack` dir, this will be default name of the dir, if you clone this repo
 2. Create a `.env` file and input your `OPENAI_API_KEY=`
