@@ -25,7 +25,7 @@ def predict(message, history):
         yield gpt_response.content[: i + 1]
 
 TITLE = """
-An Agent with versatile capabilities...
+Compound AI System with versatile capabilities
 """
 DESCRIPTION = """
 This is application allows you to **search for top news, search for tech specific news
@@ -34,7 +34,7 @@ give you a guidance to a personal finance, search for a Wikipedia article.**
 If you aren't still satisfied with these capabilities,
 then you can use the **ASK ME ANYTHING(AMA)** feature.
 
-Note: After the first input, there will be a `trash icon` on the top right hand corner of the chatbox,
+**Note:** After the first input, there will be a `trash icon` on the top right hand corner of the chatbox,
 to clear the entire chat, and below each agent response there's an `Undo` and 
 `Retry` icon.
 """
@@ -42,5 +42,5 @@ to clear the entire chat, and below each agent response there's an `Undo` and
 if __name__=="__main__":
     gr.ChatInterface(predict, title=TITLE, description=DESCRIPTION,type="messages",
                  textbox=gr.Textbox(placeholder="Type in a message and press enter...",
-                                   submit_btn=True, stop_btn=True, label="textbox")
+                                   submit_btn=True, stop_btn=True)
                 ).launch()
