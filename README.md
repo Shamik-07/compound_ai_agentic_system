@@ -73,5 +73,5 @@ This is self-explanatory, and it aims to answer any question that the user might
 
 # Resources
 
-- [Video Presentation]()
+- [Video Presentation](https://www.loom.com/share/9d721891941c49f095fd5fec8cb087bb?sid=35c80e74-b3fe-4877-9432-053a3abe081d)
 - [Slides](https://docs.google.com/presentation/d/1jrONLX6S9hsc4My43XxR44jb0WzpISy5SM5OwJcB4y0/edit?usp=sharing)
