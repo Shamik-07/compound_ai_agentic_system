@@ -1,4 +1,4 @@
-# 🖥️ Compound AI System Solution using LLMs 🖥️
+# 🖥️ Compound AI System using LLMs 🖥️
 
 ## Introduction
 
