@@ -32,8 +32,6 @@ dev-dependencies = [
     "pytest>=8.3.3",
     "langchain-core>=0.3.14",
     "langchain-openai>=0.2.4",
-    "langsmith>=0.1.138",
-    "ruff>=0.7.3",
 ]
 
 [tool.ruff.lint]
