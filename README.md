@@ -2,7 +2,7 @@
 
 ## Introduction
 
-As part of the [Berkley LLM Agent Hackathon 2024](https://rdi.berkeley.edu/llm-agents-hackathon/), this multi-agent solution was developed to solve real world problems such as: `financial inclusion` and `financial information asymmetry`, `lack of computer science/programming teachers or overburdended teachers` especially in developing countries such as *India*, help with `wikipedia research`, stay `abreast with contemporary news` and a personal `Question Answering` system.
+As part of the [Berkley LLM Agent Hackathon 2024](https://rdi.berkeley.edu/llm-agents-hackathon/), this multi-agent solution was developed to solve real world problems such as: `financial inclusion` and `financial information asymmetry`, `lack of computer science/programming teachers or overburdened teachers` especially in developing countries such as *India*, help with `wikipedia research`, stay `abreast with contemporary news` and a personal `Question Answering` system.
 This showcases the potential of making education accessible, and aid vital information dissemination.
 
 In essence, this *compound AI system* showcases the benefits of creating such a system, by orchestrating several agents to solve complex tasks and accessing it all from a single screen, and all while having a conversation with it.
