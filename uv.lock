@@ -212,6 +212,7 @@ dependencies = [
     { name = "agno" },
     { name = "duckduckgo-search" },
     { name = "fastapi", extra = ["standard"] },
+    { name = "google-genai" },
     { name = "google-generativeai" },
     { name = "googlesearch-python" },
     { name = "gradio", version = "5.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.13'" },
@@ -240,6 +241,7 @@ requires-dist = [
     { name = "agno", specifier = ">=1.1.4" },
     { name = "duckduckgo-search", specifier = ">=6.3.3" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.4" },
+    { name = "google-genai", specifier = ">=1.2.0" },
     { name = "google-generativeai", specifier = ">=0.8.3" },
     { name = "googlesearch-python", specifier = ">=1.2.5" },
     { name = "gradio", specifier = ">=5.7.0" },
@@ -763,6 +765,21 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/56/be/217a598a818567b28e859ff087f347475c807a5649296fb5a817c58dacef/google-auth-httplib2-0.2.0.tar.gz", hash = "sha256:38aa7badf48f974f1eb9861794e9c0cb2a0511a4ec0679b1f886d108f5640e05", size = 10842 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/be/8a/fe34d2f3f9470a27b01c9e76226965863f153d5fbe276f83608562e49c04/google_auth_httplib2-0.2.0-py2.py3-none-any.whl", hash = "sha256:b65a0a2123300dd71281a7bf6e64d65a0759287df52729bdd1ae2e47dc311a3d", size = 9253 },
+]
+
+[[package]]
+name = "google-genai"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-auth" },
+    { name = "pydantic" },
+    { name = "requests" },
+    { name = "typing-extensions" },
+    { name = "websockets" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0d/ed/985f2d2e2b5fbd912ab0fdb11d6dc48c22553a6c4edffabb8146d53b974a/google_genai-1.2.0-py3-none-any.whl", hash = "sha256:609d61bee73f1a6ae5b47e9c7dd4b469d50318f050c5ceacf835b0f80f79d2d9", size = 130744 },
 ]
 
 [[package]]
