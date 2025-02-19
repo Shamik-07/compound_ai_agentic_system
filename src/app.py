@@ -19,8 +19,6 @@ def predict(message: str, history: list[dict[str, str]]) -> Generator[Any, Any, 
                 Message(
                     role="user",
                     content=msg["content"],
-                    tool_call_arguments=None,
-                    tool_call_name=None,
                 )
             )
         elif msg["role"] == "assistant":
@@ -28,8 +26,6 @@ def predict(message: str, history: list[dict[str, str]]) -> Generator[Any, Any, 
                 Message(
                     role="assistant",
                     content=msg["content"],
-                    tool_call_arguments=None,
-                    tool_call_name=None,
                 )
             )
 
@@ -37,8 +33,6 @@ def predict(message: str, history: list[dict[str, str]]) -> Generator[Any, Any, 
         Message(
             role="user",
             content=message,
-            tool_call_arguments=None,
-            tool_call_name=None,
         )
     )
     gpt_response = planning_agent.run(messages=history_format)
