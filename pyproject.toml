@@ -11,6 +11,7 @@ dependencies = [
     "agno>=1.1.4",
     "duckduckgo-search>=6.3.3",
     "fastapi[standard]>=0.115.4",
+    "google-genai>=1.2.0",
     "google-generativeai>=0.8.3",
     "googlesearch-python>=1.2.5",
     "gradio>=5.7.0",
