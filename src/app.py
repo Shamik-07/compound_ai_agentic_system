@@ -46,26 +46,25 @@ TITLE = """
 Compound AI System with versatile capabilities
 """
 DESCRIPTION = """
-This is application allows you to **search for top news, search for tech specific news
+This is application allows you to `search for top news, search for tech specific news
 from hackernews, teach you C, C++, Rust, and Python, research a particular equity and
-give you a guidance to a personal finance, search for a Wikipedia article.**
+give you a guidance to a personal finance, search for a Wikipedia article.`
 If you aren't still satisfied with these capabilities,
-then you can use the **ASK ME ANYTHING(AMA)** feature.
+then you can use the `ASK ME ANYTHING(AMA)` feature.
 
 **Note:** After the first input, there will be a `trash icon` on the top right hand corner
 of the chatbox, to clear the entire chat, and below each agent response
 there's an `Undo` and `Retry` icon.
 """
 
-if __name__ == "__main__":
+# by using blocks we can reload the chat interface by executing `uv run gradio src/app.py`
+with gr.Blocks(fill_height=True) as demo:
     gr.ChatInterface(
-        predict,
-        title=TITLE,
-        description=DESCRIPTION,
+        fn=predict,
         type="messages",
-        textbox=gr.Textbox(
-            placeholder="Type in a message and press enter...",
-            submit_btn=True,
-            stop_btn=True,
-        ),
-    ).launch()
+        title=TITLE,
+        description=DESCRIPTION
+
+    )
+if __name__ == "__main__":
+    demo.launch()
