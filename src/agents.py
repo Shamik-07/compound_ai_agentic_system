@@ -47,6 +47,7 @@ hn_researcher = Agent(
     ),
     read_chat_history=True,
     add_history_to_messages=False,
+    respond_directly=True
 )
 
 
@@ -66,6 +67,7 @@ article_reader = Agent(
         temperature=0.1,
     ),
     read_chat_history=True,
+    respond_directly=True
 )
 
 top_news_search_agent = Agent(
@@ -100,6 +102,7 @@ top_news_search_agent = Agent(
         temperature=0.1,
     ),
     read_chat_history=True,
+    respond_directly=True
 )
 
 hn_team = Agent(
@@ -133,6 +136,7 @@ hn_team = Agent(
         temperature=0.1,
     ),
     read_chat_history=True,
+    respond_directly=True
 )
 
 stock_analyst = Agent(
@@ -164,6 +168,7 @@ stock_analyst = Agent(
         "Let the investment lead know the file name of the report.",
     ],
     read_chat_history=True,
+    save_response_to_file=reports_dir.as_posix()
 )
 
 research_analyst = Agent(
@@ -193,6 +198,7 @@ research_analyst = Agent(
         "Then think deeply about whether a stock is valuable or not. Be discerning, you are a skeptical investor focused on maximising growth.",
     ],
     read_chat_history=True,
+    respond_directly=True
 )
 
 investment_lead = Agent(
@@ -222,6 +228,7 @@ investment_lead = Agent(
         "Produce a nicely formatted response to the user, use markdown to format the response.",
     ],
     read_chat_history=True,
+    respond_directly=True
 )
 
 personal_finance_agent = Agent(
@@ -248,6 +255,7 @@ personal_finance_agent = Agent(
     markdown=True,
     add_history_to_messages=True,
     read_chat_history=True,
+    respond_directly=True
 )
 
 wikipedia_agent = Agent(
@@ -296,6 +304,7 @@ wikipedia_agent = Agent(
     add_history_to_messages=True,
     num_history_responses=10,
     read_chat_history=True,
+    respond_directly=True
 )
 
 programming_tutor = Agent(
@@ -355,6 +364,7 @@ programming_tutor = Agent(
     add_history_to_messages=True,
     read_chat_history=True,
     num_history_responses=10,
+    respond_directly=True
 )
 
 
