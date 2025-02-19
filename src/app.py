@@ -3,8 +3,8 @@ from collections.abc import Generator
 from typing import Any
 
 import gradio as gr
+from agno.models.message import Message
 from dotenv import load_dotenv
-from phi.model.message import Message
 
 from agents import planning_agent
 
