@@ -10,7 +10,7 @@ from agno.tools.googlesearch import GoogleSearchTools
 from agno.tools.hackernews import HackerNewsTools
 from agno.tools.newspaper4k import Newspaper4kTools
 from agno.tools.yfinance import YFinanceTools
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 from utils import (
     create_finance_reports_dir,
@@ -19,7 +19,7 @@ from utils import (
     search_on_wikipedia,
 )
 
-_ = load_dotenv()
+_ = load_dotenv(dotenv_path=find_dotenv(raise_error_if_not_found=True))
 
 openai_model = OpenAIChat(
     id="gpt-4o-mini", temperature=0.1, api_key=os.getenv("OPENAI_API_KEY")
