@@ -1,4 +1,3 @@
-import time
 from collections.abc import Generator
 from typing import Any
 
@@ -21,7 +20,7 @@ def predict(message: str, history: list[dict[str, str]]) -> Generator[Any, Any, 
                     content=msg["content"],
                 )
             )
-        elif msg["role"] == "assistant":
+        elif msg["role"] == "assistant" and msg["content"]:
             history_format.append(
                 Message(
                     role="assistant",
@@ -36,10 +35,10 @@ def predict(message: str, history: list[dict[str, str]]) -> Generator[Any, Any, 
         )
     )
     gpt_response = planning_agent.run(messages=history_format)
-    # return gpt_response.content
-    for i in range(len(gpt_response.content)):
-        time.sleep(0.01)
-        yield gpt_response.content[: i + 1]
+    return gpt_response.content
+    # for i in range(len(gpt_response.content)):
+    #     time.sleep(0.01)
+    #     yield gpt_response.content[: i + 1]
 
 
 TITLE = """
@@ -67,4 +66,5 @@ with gr.Blocks(fill_height=True) as demo:
 
     )
 if __name__ == "__main__":
-    demo.launch()
+    # demo.launch()
+    gpt_response = planning_agent.cli_app(message="hello...",markdown=True, stream=True)
